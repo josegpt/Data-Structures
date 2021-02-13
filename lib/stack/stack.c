@@ -69,7 +69,9 @@ void stack_pop(Stack* s)
     exit(1);
   }
 
-  s->head = s->head->next;
+  Node* temp = s->head;
+  s->head = temp->next;
+  free(temp);
   s->size--;
 }
 
