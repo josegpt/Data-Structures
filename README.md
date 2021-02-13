@@ -32,10 +32,12 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 - [ ] mDFS
 - [ ] Kahn's Algorithm
 - [ ] Recurisve Backtracking
-- [ ] Greedy Algorithms
+
+## Greedy Algorithms
+
 - [ ] Making Change
 - [ ] Minimum Spanning Trees
-- [ ] Prim's ALgorithm
+- [ ] Prim's Algorithm
 - [ ] Kruskal's Algorithm
 - [ ] Huffman Coding
 - [ ] Dijkstra's
