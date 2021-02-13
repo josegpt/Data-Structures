@@ -27,7 +27,7 @@ Stack* stack_create()
   return s;
 }
 
-Node* node_create(int val)
+Node* node_create_stack(int val)
 {
   Node* n = malloc(sizeof(Node));
 
