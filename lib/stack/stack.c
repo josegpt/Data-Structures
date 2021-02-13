@@ -27,7 +27,7 @@ Stack* stack_create()
   return s;
 }
 
-Node* node_create(int val)
+Node* node_create_stack(int val)
 {
   Node* n = malloc(sizeof(Node));
 
@@ -71,8 +71,8 @@ void stack_pop(Stack* s)
 
   Node* temp = s->head;
   s->head = temp->next;
-  free(temp);
   s->size--;
+  free(temp);
 }
 
 void stack_push(Stack* s, int val)
@@ -80,7 +80,7 @@ void stack_push(Stack* s, int val)
   Node* new_node = node_create(val);
 
   if (stack_empty(s)) {
-    s->head = node_create(val);
+    s->head = new_node;
   } else {
     new_node->next = s->head;
     s->head = new_node;
