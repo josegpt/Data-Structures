@@ -18,6 +18,11 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 - [ ] Radix Sort **O(n \* d)** _where d is the number of digits in the maximum number_
 - [ ] Bucket Sort **O(n)**
 
+## Data Structures
+
+- [ ] Stack
+- [ ] Queue
+
 ## Trees
 
 - [ ] AVL Trees
