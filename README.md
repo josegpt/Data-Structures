@@ -18,6 +18,11 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 - [ ] Radix Sort **O(n \* d)** _where d is the number of digits in the maximum number_
 - [ ] Bucket Sort **O(n)**
 
+## Data Structures
+
+- [x] [Stack](lib/stack/stack.c)
+- [ ] Queue
+
 ## Trees
 
 - [ ] AVL Trees
@@ -32,10 +37,12 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 - [ ] mDFS
 - [ ] Kahn's Algorithm
 - [ ] Recurisve Backtracking
-- [ ] Greedy Algorithms
+
+## Greedy Algorithms
+
 - [ ] Making Change
 - [ ] Minimum Spanning Trees
-- [ ] Prim's ALgorithm
+- [ ] Prim's Algorithm
 - [ ] Kruskal's Algorithm
 - [ ] Huffman Coding
 - [ ] Dijkstra's
