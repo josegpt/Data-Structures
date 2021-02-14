@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "max_heap.h"
 #include  "../utils/utils.h"
@@ -71,14 +72,20 @@ void heap_insert(Heap* h, int val)
   if (h->size < HEAP_SIZE) {
     h->data[h->size++] = val;
     heapify_up(h, h->size - 1);
+  } else {
+    fprintf(stderr, "heap full");
+    exit(1);
   }
 }
 
 void heap_remove(Heap* h, int index)
 {
-  if (h->size > 0 && index <= h->size - 1) {
+  if (h->size >= 0 && index <= h->size - 1) {
     swap(&h->data[--h->size], &h->data[index]);
     heapify_down(h, index);
+  } else {
+    fprintf(stderr, "heap empty");
+    exit(1);
   }
 }
 

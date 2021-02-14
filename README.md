@@ -22,6 +22,7 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 
 - [x] [Stack](lib/stack/stack.c)
 - [x] [Queue](lib/queue/queue.c)
+- [x] [Priority Queue](lib/pqueue/pqueue.c)
 
 ## Trees
 
