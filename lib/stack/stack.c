@@ -77,7 +77,7 @@ void stack_pop(Stack* s)
 
 void stack_push(Stack* s, int val)
 {
-  Node* new_node = node_create(val);
+  Node* new_node = node_create_stack(val);
 
   if (stack_empty(s)) {
     s->head = new_node;
