@@ -15,6 +15,8 @@ struct Trie {
   Node* root;
 };
 
+/* HELPERS */
+
 int char_to_ord(char c)
 {
   return tolower(c) - 'a';
@@ -36,6 +38,50 @@ int has_letters(Node* n)
   return 0;
 }
 
+int __trie_count_words(Node* node)
+{
+  int counter = 0;
+  Node* current = node;
+
+  if (current == NULL) {
+    return 0;
+  }
+
+  for (int i = 0; i < ALPHABET_SIZE; ++i) {
+    if (current->letters[i] != NULL) {
+      counter += __trie_count_words(current->letters[i]);
+    }
+  }
+
+  if (current->isLeaf) {
+    counter += 1;
+  }
+
+  return counter;
+}
+
+void __trie_print_words(Node* node, int level, char* word)
+{
+  Node* current = node;
+
+  if (current == NULL) {
+    return;
+  }
+
+  for (int i = 0; i < ALPHABET_SIZE; ++i) {
+    if (current->letters[i] != NULL) {
+      word[level] = ord_to_chard(i);
+      __trie_print_words(current->letters[i], level + 1, word);
+    }
+  }
+
+  if (current->isLeaf) {
+    word[level] = '\0';
+    printf("%s\n", word);
+    return;
+  }
+}
+
 Node* __trie_remove(Node* node, char* word, int level)
 {
   Node* current = node;
@@ -45,7 +91,6 @@ Node* __trie_remove(Node* node, char* word, int level)
   }
 
   int word_length = strlen(word);
-
   if (word_length == level) {
     if (current->isLeaf) {
       current->isLeaf = 0;
@@ -88,6 +133,8 @@ Node* node_create_trie(void)
   return n;
 }
 
+/* IMPLEMENTATION */
+
 Trie* trie_create(void)
 {
   Trie* t = malloc(sizeof(Trie));
@@ -102,53 +149,9 @@ Trie* trie_create(void)
   return t;
 }
 
-int __trie_count_words(Node* node)
-{
-  int counter = 0;
-  Node* current = node;
-
-  if (current == NULL) {
-    return 0;
-  }
-
-  for (int i = 0; i < ALPHABET_SIZE; ++i) {
-    if (current->letters[i] != NULL) {
-      counter += __trie_count_words(current->letters[i]);
-    }
-  }
-
-  if (current->isLeaf) {
-    counter += 1;
-  }
-
-  return counter;
-}
-
 int trie_count_words(Trie* t)
 {
   return __trie_count_words(t->root);
-}
-
-void __trie_print_words(Node* node, int level, char* word)
-{
-  Node* current = node;
-
-  if (current == NULL) {
-    return;
-  }
-
-  for (int i = 0; i < ALPHABET_SIZE; ++i) {
-    if (current->letters[i] != NULL) {
-      word[level] = ord_to_chard(i);
-      __trie_print_words(current->letters[i], level + 1, word);
-    }
-  }
-
-  if (current->isLeaf) {
-    word[level] = '\0';
-    printf("%s\n", word);
-    return;
-  }
 }
 
 void trie_print_words(Trie* t)
