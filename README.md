@@ -27,7 +27,7 @@ These are the Fundamental Data Structures and Algorithms for a Software Engineer
 ## Trees
 
 - [ ] AVL Trees
-- [ ] Tries
+- [x] [Trie](lib/trie/trie.c)
 - [ ] Binary Search Trees
 
 ## Graphs
