@@ -3,7 +3,7 @@
 
 typedef struct Queue Queue;
 
-Queue* queue_create();
+Queue* queue_create(void);
 int queue_back(Queue* s);
 int queue_size(Queue* s);
 int queue_front(Queue* s);

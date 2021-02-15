@@ -3,7 +3,7 @@
 
 typedef struct Heap Heap;
 
-Heap* heap_create();
+Heap* heap_create(void);
 void heap_insert(Heap* h, int val);
 void heap_remove(Heap* h, int index);
 int heap_extractMax(Heap* h);

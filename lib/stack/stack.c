@@ -13,7 +13,7 @@ struct Stack {
   int size;
 };
 
-Stack* stack_create()
+Stack* stack_create(void)
 {
   Stack* s = malloc(sizeof(Stack));
 
@@ -73,6 +73,7 @@ void stack_pop(Stack* s)
   s->head = temp->next;
   s->size--;
   free(temp);
+  temp = NULL;
 }
 
 void stack_push(Stack* s, int val)
