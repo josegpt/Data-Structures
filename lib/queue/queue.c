@@ -14,7 +14,7 @@ struct Queue {
   int size;
 };
 
-Queue* queue_create()
+Queue* queue_create(void)
 {
   Queue* q = malloc(sizeof(Queue));
 
@@ -85,6 +85,7 @@ void queue_shift(Queue* q)
   q->tail = temp->prev;
   q->size--;
   free(temp);
+  temp = NULL;
 }
 
 void queue_push(Queue* q, int val)

@@ -62,6 +62,12 @@ void heapify_down(Heap* h, int index)
 Heap* heap_create(void)
 {
   Heap* h = malloc(sizeof(Heap));
+
+  if (h == NULL) {
+    fprintf(stderr, "could not initialize heap");
+    exit(1);
+  }
+
   h->size = 0;
 
   return h;
